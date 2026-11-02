@@ -66,15 +66,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--volt); outline-
 .hero .lede b { color: var(--tan); font-weight: 600; }
 .handle { font-family: var(--mono); font-size: 14px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* Portrait: rounded photo card, same language as the cards below */
-.portrait { margin: 0; width: 128px; order: -1; }
-.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 18px; border: 1px solid var(--line); background: #0b0b0d; }
+/* Portrait: circular photo */
+.portrait { margin: 0; width: 112px; order: -1; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 28%; border-radius: 50%; border: 1px solid var(--line); background: #0b0b0d; }
 @media (min-width: 640px), print {
-  .hero { grid-template-columns: minmax(0, 1fr) 260px; column-gap: 52px; align-items: start; }
+  .hero { grid-template-columns: minmax(0, 1fr) 240px; column-gap: 52px; align-items: start; }
   .hero > * { grid-column: 1; }
-  .hero > .portrait { grid-column: 2; grid-row: 1 / span 4; width: auto; order: 0; }
+  .hero > .portrait { grid-column: 2; grid-row: 1 / span 4; width: 240px; order: 0; align-self: center; }
 }
-@media print { .hero { grid-template-columns: minmax(0, 1fr) 150px; column-gap: 32px; } }
+@media print { .hero { grid-template-columns: minmax(0, 1fr) 140px; column-gap: 32px; } .hero > .portrait { width: 140px; } }
 
 /* Stats */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--fg); border-bottom: 1px solid var(--line); }
