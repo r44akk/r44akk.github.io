@@ -66,15 +66,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--volt); outline-
 .hero .lede b { color: var(--tan); font-weight: 600; }
 .handle { font-family: var(--mono); font-size: 14px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* Portrait: circular photo */
-.portrait { margin: 0; width: 112px; order: -1; }
+/* Photo + name lockup */
+.namerow { display: flex; align-items: center; gap: 16px; }
+.portrait { margin: 0; flex: none; width: 76px; }
 .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 28%; border-radius: 50%; border: 1px solid var(--line); background: #0b0b0d; }
-@media (min-width: 640px), print {
-  .hero { grid-template-columns: minmax(0, 1fr) 240px; column-gap: 52px; align-items: start; }
-  .hero > * { grid-column: 1; }
-  .hero > .portrait { grid-column: 2; grid-row: 1 / span 4; width: 240px; order: 0; align-self: center; }
-}
-@media print { .hero { grid-template-columns: minmax(0, 1fr) 140px; column-gap: 32px; } .hero > .portrait { width: 140px; } }
+@media (min-width: 640px) { .namerow { gap: 28px; } .portrait { width: 132px; } }
+
+/* Pointer to the contact box at the bottom */
+.reach { justify-self: start; font: 600 14px var(--body); color: var(--fg); text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; }
+.reach:hover { border-color: var(--fg); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Stats */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--fg); border-bottom: 1px solid var(--line); }
@@ -196,9 +198,10 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body { font-size: 12.5px; padding: 0; }
   .wrap { max-width: none; padding-block: 0; gap: 26px; }
-  .topbar, .copy, .send, .watch { display: none; }
+  .topbar, .copy, .send, .watch, .reach { display: none; }
   .mail { font-size: 18px; color: var(--bg); }
   .hero h1 { font-size: 84px; }
+  .namerow { gap: 20px; } .portrait { width: 92px; }
   .hero .lede { font-size: 17px; }
   .stat b { font-size: 34px; }
   section h2 { font-size: 24px; }
@@ -224,10 +227,13 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
   </nav>
   <header class="hero">
     <p class="label">Creator media kit · <span>2026</span></p>
-    <h1>rak<em>.</em></h1>
+    <div class="namerow">
+      <figure class="portrait"><img src="rak.jpg" width="720" height="900" alt="Portrait of rak in a black suit and tie"></figure>
+      <h1>rak<em>.</em></h1>
+    </div>
     <p class="lede">UK lifestyle creator mixing <b>fashion, grooming &amp; fragrance</b> with honest, money-first takes on owning a Tesla Model 3.</p>
+    <a class="reach" href="#contact">My contact details are at the bottom <span aria-hidden="true">&darr;</span></a>
     <p class="handle"><span>TikTok @r44akk</span><span>Birmingham, UK</span></p>
-    <figure class="portrait"><img src="rak.jpg" width="720" height="900" alt="Portrait of rak in a black suit and tie"></figure>
   </header>
 
   <div class="stats" role="list">
@@ -334,7 +340,7 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
     <p class="note">Rates on request. All partnerships are clearly marked #ad in line with UK ASA guidelines.</p>
   </section>
 
-  <footer class="contact">
+  <footer class="contact" id="contact">
     <p class="label">Let's work together</p>
     <h2>Get in touch</h2>
     <div class="mailrow">
