@@ -116,7 +116,7 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
 @media (max-width: 520px) { .posts a { grid-template-columns: 4.5em 1fr; } .posts .tag { display: none; } }
 
 /* Portfolio videos */
-.reels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.reels { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
 .reel { margin: 0; display: grid; gap: 10px; align-content: start; min-width: 0; }
 .frame { position: relative; aspect-ratio: 9 / 16; max-width: 100%; border-radius: 14px; overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
 .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -273,6 +273,10 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
       <h2>Watch my work</h2>
     </header>
     <div class="reels">
+      <figure class="reel">
+        <div class="frame"><iframe src="https://www.tiktok.com/player/v1/7703559880166133025?description=0&music_info=0&rel=0&closed_caption=0&native_context_menu=0" title="Get ready with me (TikTok video)" loading="lazy" allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+        <figcaption><span class="tag">Fashion</span><span class="t">Get ready with me</span></figcaption>
+      </figure>
       <figure class="reel">
         <div class="frame"><iframe src="https://www.tiktok.com/player/v1/7693261060719004950?description=0&music_info=0&rel=0&closed_caption=0&native_context_menu=0" title="Why I chose my Tesla Model 3 (TikTok video)" loading="lazy" allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
         <figcaption><span class="tag">EV</span><span class="t">Why I chose my Tesla Model 3</span><span class="v">268.6K views</span></figcaption>
