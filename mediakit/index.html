@@ -68,7 +68,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--volt); outline-
 
 /* Photo + name lockup */
 .namerow { display: flex; align-items: center; gap: 16px; }
-.portrait { margin: 0; flex: none; width: 76px; }
+.portrait { margin: 0 0 0 auto; flex: none; width: 76px; order: 2; }   /* pushed to the right-hand side of the name row */
 .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 28%; border-radius: 50%; border: 1px solid var(--line); background: #0b0b0d; }
 @media (min-width: 640px) { .namerow { gap: 28px; } .portrait { width: 132px; } }
 
@@ -232,7 +232,7 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
       <h1>rak<em>.</em></h1>
     </div>
     <p class="lede">UK lifestyle creator mixing <b>fashion, grooming &amp; fragrance</b> with honest, money-first takes on owning a Tesla Model 3.</p>
-    <a class="reach" href="#contact">Contact me to get in touch <span aria-hidden="true">&darr;</span></a>
+    <a class="reach" href="#contact">Get in touch <span aria-hidden="true">&darr;</span></a>
     <p class="handle"><span>TikTok @r44akk</span><span>Birmingham, UK</span></p>
   </header>
 
