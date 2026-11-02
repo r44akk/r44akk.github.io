@@ -66,6 +66,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--volt); outline-
 .hero .lede b { color: var(--tan); font-weight: 600; }
 .handle { font-family: var(--mono); font-size: 14px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
 
+/* Portrait */
+.portrait { display: block; width: 128px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); background: #000; order: -1; }
+@media (min-width: 640px), print {
+  .hero { grid-template-columns: minmax(0, 1fr) 260px; column-gap: 40px; align-items: start; }
+  .hero > * { grid-column: 1; }
+  .hero > .portrait { grid-column: 2; grid-row: 1 / span 4; width: 100%; order: 0; }
+}
+@media print { .hero { grid-template-columns: minmax(0, 1fr) 150px; column-gap: 24px; } }
+
 /* Stats */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--fg); border-bottom: 1px solid var(--line); }
 .stat { padding: 20px 16px 20px 0; display: grid; gap: 4px; }
@@ -217,6 +226,7 @@ section h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing
     <h1>rak<em>.</em></h1>
     <p class="lede">UK lifestyle creator mixing <b>fashion, grooming &amp; fragrance</b> with honest, money-first takes on owning a Tesla Model 3.</p>
     <p class="handle"><span>TikTok @r44akk</span><span>Birmingham, UK</span></p>
+    <img class="portrait" src="rak.jpg" width="720" height="900" alt="Portrait of rak in a black suit and tie">
   </header>
 
   <div class="stats" role="list">
