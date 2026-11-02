@@ -67,7 +67,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--volt); outline-
 .handle { font-family: var(--mono); font-size: 14px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* Portrait */
-.portrait { display: block; width: 128px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); background: #000; order: -1; }
+.portrait {
+  display: block; width: 128px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; order: -1; background: transparent;
+  /* soft oval fade: the photo's black background dissolves into the page */
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 40%, rgba(0,0,0,.86) 54%, rgba(0,0,0,.58) 68%, rgba(0,0,0,.26) 82%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 40%, rgba(0,0,0,.86) 54%, rgba(0,0,0,.58) 68%, rgba(0,0,0,.26) 82%, transparent 100%);
+}
 @media (min-width: 640px), print {
   .hero { grid-template-columns: minmax(0, 1fr) 260px; column-gap: 40px; align-items: start; }
   .hero > * { grid-column: 1; }
